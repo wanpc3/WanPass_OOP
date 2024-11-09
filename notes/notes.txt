@@ -1,0 +1,52 @@
+I created this Java codes because I want to implement the concept of Object Oriented Programming in Java.
+In this case, I use a password manager as a topic because this is my Android application that I am currently working on.
+
+---WanPass User: wp_user.java---
+Description: Detects user registration detail.
+Example: no., Name, email, etc... 
+Primary key: no. (Number)
+Relation table: 
+
+---User Master Password: user_master_pswd.java---
+Description: Whenever user wants to access their password at the password vault, they have to enter a special key called master password.
+Example: master_key_no, pswd, salt, hash_pswd. (Make sure it's highly encrypted)
+Primary key: master_key_no
+Relation table: 
+
+---User Password Vault: pswd_vault.java---
+Description: Stores a password database.
+Example: vault_no, vault_name, created_by (refer to user_acc), created_at (time & date), etc...
+Primary key: vault_no (Number)
+Relation table: 
+
+---Password Category: pswd_category.java---
+Description: Define the category of user's passwords 
+Example: category_no, social media, banking, school, etc...
+Primary key: category_no, category_name
+Relation table: 
+
+---Entry: pswd_entry.java---
+Description: Entry refers to the account which user saves a password in it.
+Example: entry_no, title, expiry_date.
+
+---User Account: user_acc.java---
+Description: Stores user account.
+Example: no., acc_name, username, etc...
+Primary key: no. (Number)
+Relation table:
+
+---User Account Password: user_acc_pswd.java---
+Description: Stores all user passwords inside the user account.
+Example: no., password. (Make sure it's highly encrypted)
+Primary key: no. (Number)
+Relation table: user_acc
+
+---Deleted Password: del_pswd.java---
+Description: Keeps all deleted passwords from the vault.
+
+WanPass.java: Main application of pswd_manager project.
+
+
+***REMINDER!***
+1. Do not get confused with wp_user and user_acc. wp_user is a user who registers to the password manager. user_acc, on the other hand, stores the user accounts (social media, banking, etc...) in password manager vault.
+2. 
